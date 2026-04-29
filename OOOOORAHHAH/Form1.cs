@@ -22,14 +22,7 @@ namespace OOOOORAHHAH
         public Form1()
         {
             InitializeComponent();
-            using (StreamReader sr = new StreamReader("C:/Users/0408428/Downloads/emoji.csv"))
-            {
-                string line;
-                while ((line = sr.ReadLine()) != null)
-                {
-                    emoji.Add(line);
-                }
-            }
+            using (StreamReader sr = new StreamReader("C:/Users/0408428/Downloads/emoji.csv"));
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -37,44 +30,19 @@ namespace OOOOORAHHAH
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btninventory_Click(object sender, EventArgs e)
         {
-       
-            var value = rand.Next(emoji.Count());
-            POKIES.Text = emoji[value];
+            ShowScreen(new UC_Inventory());
         }
-
-        private void button2_Click(object sender, EventArgs e)
+        private void ShowScreen(UserControl newScreen)
         {
-            int red = rand.Next(255);
-            int blue = rand.Next(255);
-            int green = rand.Next(255);
-
-
-
-            POKIES.ForeColor = Color.FromArgb(red, blue, green);
-
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
+            foreach (Control ctrl in pnlContent.Controls)
+            {
+                ctrl.Dispose();
+            }
+            pnlContent.Controls.Clear();
+            newScreen.Dock = DockStyle.Fill;
+            pnlContent.Controls.Add(newScreen);
         }
     }
 }
