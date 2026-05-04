@@ -31,9 +31,9 @@
             this.label = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnmenu = new System.Windows.Forms.Button();
-            this.btninventory = new System.Windows.Forms.Button();
             this.btncart = new System.Windows.Forms.Button();
+            this.btninventory = new System.Windows.Forms.Button();
+            this.btnmenu = new System.Windows.Forms.Button();
             this.pnlContent = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -73,16 +73,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Menu";
             // 
-            // btnmenu
+            // btncart
             // 
-            this.btnmenu.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.btnmenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnmenu.Location = new System.Drawing.Point(3, 17);
-            this.btnmenu.Name = "btnmenu";
-            this.btnmenu.Size = new System.Drawing.Size(191, 52);
-            this.btnmenu.TabIndex = 0;
-            this.btnmenu.Text = "Main Menu";
-            this.btnmenu.UseVisualStyleBackColor = false;
+            this.btncart.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.btncart.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btncart.Location = new System.Drawing.Point(3, 121);
+            this.btncart.Name = "btncart";
+            this.btncart.Size = new System.Drawing.Size(191, 52);
+            this.btncart.TabIndex = 2;
+            this.btncart.Text = "Cart";
+            this.btncart.UseVisualStyleBackColor = false;
             // 
             // btninventory
             // 
@@ -96,16 +96,16 @@
             this.btninventory.UseVisualStyleBackColor = false;
             this.btninventory.Click += new System.EventHandler(this.btninventory_Click);
             // 
-            // btncart
+            // btnmenu
             // 
-            this.btncart.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.btncart.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btncart.Location = new System.Drawing.Point(3, 121);
-            this.btncart.Name = "btncart";
-            this.btncart.Size = new System.Drawing.Size(191, 52);
-            this.btncart.TabIndex = 2;
-            this.btncart.Text = "Cart";
-            this.btncart.UseVisualStyleBackColor = false;
+            this.btnmenu.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.btnmenu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnmenu.Location = new System.Drawing.Point(3, 17);
+            this.btnmenu.Name = "btnmenu";
+            this.btnmenu.Size = new System.Drawing.Size(191, 52);
+            this.btnmenu.TabIndex = 0;
+            this.btnmenu.Text = "Main Menu";
+            this.btnmenu.UseVisualStyleBackColor = false;
             // 
             // pnlContent
             // 
@@ -113,14 +113,14 @@
             this.pnlContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlContent.Location = new System.Drawing.Point(200, 0);
             this.pnlContent.Name = "pnlContent";
-            this.pnlContent.Size = new System.Drawing.Size(600, 450);
+            this.pnlContent.Size = new System.Drawing.Size(761, 450);
             this.pnlContent.TabIndex = 5;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(961, 450);
             this.Controls.Add(this.pnlContent);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label);
