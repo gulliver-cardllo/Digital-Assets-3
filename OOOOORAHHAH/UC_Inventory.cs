@@ -24,11 +24,23 @@ namespace OOOOORAHHAH
         private BindingList<Product> _inventoryList = new BindingList<Product>();
         private BindingSource _bindingSource = new BindingSource();
 
-        string csvpath = "H:/Programming0/OOOOORAHHAH/OOOOORAHHAH/test - Sheet1.csv";
+        public string csvpath = "C:/Users/0408428/Downloads/goon11.csv";
 
         private void UC_Inventory_Load(object sender, EventArgs e)
         {
-            var tempData = Inventory
+            string path = csvpath;
+
+            
+            var tempData = ItemService.LoadFromCSV(path);
+
+            
+            _inventoryList.Clear();
+            foreach (var item in tempData)
+            {
+                _inventoryList.Add(item);
+            }
+
+            dataGridView1.DataSource = _inventoryList;
         }
 
 

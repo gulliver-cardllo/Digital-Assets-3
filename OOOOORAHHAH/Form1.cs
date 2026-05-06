@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
-// testing pull
+
 namespace OOOOORAHHAH
 {
 
@@ -16,13 +16,9 @@ namespace OOOOORAHHAH
     public partial class Form1 : Form
     {
 
-        List<string> emoji = new List<string>();
-        Random rand = new Random();
-
         public Form1()
         {
             InitializeComponent();
-            using (StreamReader sr = new StreamReader("C:/Users/0408428/Downloads/emoji.csv"));
         }
 
         private void Form1_Load(object sender, EventArgs e)
