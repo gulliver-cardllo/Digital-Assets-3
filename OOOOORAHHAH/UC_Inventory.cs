@@ -17,14 +17,26 @@ namespace OOOOORAHHAH
         public UC_Inventory()
         {
             InitializeComponent();
-            using (StreamReader sr = new StreamReader("H:/Programming/OOOOORAHHAH/OOOOORAHHAH/test - Sheet1.csv"))
-            {
-                string line;
-                while ((line = sr.ReadLine()) != null)
-                {
-                    invform.Add(line);
-                }
+            
+            
         }
+
+        private BindingList<Product> _inventoryList = new BindingList<Product>();
+        private BindingSource _bindingSource = new BindingSource();
+
+        string csvpath = "H:/Programming0/OOOOORAHHAH/OOOOORAHHAH/test - Sheet1.csv";
+
+        private void UC_Inventory_Load(object sender, EventArgs e)
+        {
+            var tempData = Inventory
+        }
+
+
+
+
+
+
+
 
         private void button3_Click(object sender, EventArgs e)
         {
@@ -36,4 +48,6 @@ namespace OOOOORAHHAH
 
         }
     }
+
 }
+
