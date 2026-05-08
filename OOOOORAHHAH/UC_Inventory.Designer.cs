@@ -29,10 +29,6 @@
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.nameclm = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quantityclm = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.priceclm = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.itemidclm = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.addbtn = new System.Windows.Forms.Button();
             this.removebtn = new System.Windows.Forms.Button();
@@ -46,6 +42,10 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.nameclm = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantityclm = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceclm = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.itemidclm = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -63,30 +63,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(474, 370);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // nameclm
-            // 
-            this.nameclm.Frozen = true;
-            this.nameclm.HeaderText = "Name";
-            this.nameclm.Name = "nameclm";
-            // 
-            // quantityclm
-            // 
-            this.quantityclm.Frozen = true;
-            this.quantityclm.HeaderText = "Quantity";
-            this.quantityclm.Name = "quantityclm";
-            // 
-            // priceclm
-            // 
-            this.priceclm.Frozen = true;
-            this.priceclm.HeaderText = "Price EA";
-            this.priceclm.Name = "priceclm";
-            // 
-            // itemidclm
-            // 
-            this.itemidclm.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.itemidclm.HeaderText = "Item ID";
-            this.itemidclm.Name = "itemidclm";
             // 
             // groupBox1
             // 
@@ -201,6 +177,34 @@
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 0;
             // 
+            // nameclm
+            // 
+            this.nameclm.DataPropertyName = "InvName";
+            this.nameclm.Frozen = true;
+            this.nameclm.HeaderText = "Name";
+            this.nameclm.Name = "nameclm";
+            // 
+            // quantityclm
+            // 
+            this.quantityclm.DataPropertyName = "InvQuantity ";
+            this.quantityclm.Frozen = true;
+            this.quantityclm.HeaderText = "Quantity";
+            this.quantityclm.Name = "quantityclm";
+            // 
+            // priceclm
+            // 
+            this.priceclm.DataPropertyName = "InvPrice";
+            this.priceclm.Frozen = true;
+            this.priceclm.HeaderText = "Price EA";
+            this.priceclm.Name = "priceclm";
+            // 
+            // itemidclm
+            // 
+            this.itemidclm.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.itemidclm.DataPropertyName = "InvID";
+            this.itemidclm.HeaderText = "Item ID";
+            this.itemidclm.Name = "itemidclm";
+            // 
             // UC_Inventory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -219,10 +223,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameclm;
-        private System.Windows.Forms.DataGridViewTextBoxColumn quantityclm;
-        private System.Windows.Forms.DataGridViewTextBoxColumn priceclm;
-        private System.Windows.Forms.DataGridViewTextBoxColumn itemidclm;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Button addbtn;
@@ -236,5 +236,9 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameclm;
+        private System.Windows.Forms.DataGridViewTextBoxColumn quantityclm;
+        private System.Windows.Forms.DataGridViewTextBoxColumn priceclm;
+        private System.Windows.Forms.DataGridViewTextBoxColumn itemidclm;
     }
 }

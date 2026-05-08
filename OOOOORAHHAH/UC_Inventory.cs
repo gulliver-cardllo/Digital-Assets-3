@@ -13,7 +13,7 @@ namespace OOOOORAHHAH
 {
     public partial class UC_Inventory : UserControl
     {
-        List<String> invform = new List<string>();
+ 
         public UC_Inventory()
         {
             InitializeComponent();
@@ -24,7 +24,7 @@ namespace OOOOORAHHAH
         private BindingList<Product> _inventoryList = new BindingList<Product>();
         private BindingSource _bindingSource = new BindingSource();
 
-        public string csvpath = "C:/Users/0408428/Downloads/goon11.csv";
+        public string csvpath = "H:/Programming/OOOOORAHHAH/OOOOORAHHAH/test - Sheet1.csv";
 
         private void UC_Inventory_Load(object sender, EventArgs e)
         {

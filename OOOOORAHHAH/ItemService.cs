@@ -13,6 +13,7 @@ namespace OOOOORAHHAH
         {
             List<Product> products = new List<Product>();
             if (!File.Exists(csvpath)) return products;
+            // Skip 1 skips the first row which is the headers
             var lines = File.ReadAllLines(csvpath).Skip(1);
 
             foreach (string line in lines)
