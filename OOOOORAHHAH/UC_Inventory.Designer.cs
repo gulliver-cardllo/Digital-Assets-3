@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.addbtn = new System.Windows.Forms.Button();
             this.removebtn = new System.Windows.Forms.Button();
@@ -42,27 +41,14 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.nameclm = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quantityclm = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.priceclm = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.itemidclm = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.InvName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.InvQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.InvPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.InvID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.nameclm,
-            this.quantityclm,
-            this.priceclm,
-            this.itemidclm});
-            this.dataGridView1.Location = new System.Drawing.Point(245, 24);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(474, 370);
-            this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // groupBox1
             // 
@@ -112,6 +98,7 @@
             this.updatebtn.TabIndex = 8;
             this.updatebtn.Text = "Update";
             this.updatebtn.UseVisualStyleBackColor = true;
+            this.updatebtn.Click += new System.EventHandler(this.updatebtn_Click);
             // 
             // label1
             // 
@@ -177,33 +164,56 @@
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 0;
             // 
-            // nameclm
+            // dataGridView1
             // 
-            this.nameclm.DataPropertyName = "InvName";
-            this.nameclm.Frozen = true;
-            this.nameclm.HeaderText = "Name";
-            this.nameclm.Name = "nameclm";
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.InvName,
+            this.InvQuantity,
+            this.InvPrice,
+            this.InvID});
+            this.dataGridView1.Location = new System.Drawing.Point(245, 24);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(474, 370);
+            this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // quantityclm
+            // InvName
             // 
-            this.quantityclm.DataPropertyName = "InvQuantity ";
-            this.quantityclm.Frozen = true;
-            this.quantityclm.HeaderText = "Quantity";
-            this.quantityclm.Name = "quantityclm";
+            this.InvName.DataPropertyName = "InvName";
+            this.InvName.Frozen = true;
+            this.InvName.HeaderText = "Name";
+            this.InvName.Name = "InvName";
+            this.InvName.ReadOnly = true;
             // 
-            // priceclm
+            // InvQuantity
             // 
-            this.priceclm.DataPropertyName = "InvPrice";
-            this.priceclm.Frozen = true;
-            this.priceclm.HeaderText = "Price EA";
-            this.priceclm.Name = "priceclm";
+            this.InvQuantity.DataPropertyName = "InvQuantity ";
+            this.InvQuantity.Frozen = true;
+            this.InvQuantity.HeaderText = "Quantity";
+            this.InvQuantity.Name = "InvQuantity";
+            this.InvQuantity.ReadOnly = true;
             // 
-            // itemidclm
+            // InvPrice
             // 
-            this.itemidclm.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.itemidclm.DataPropertyName = "InvID";
-            this.itemidclm.HeaderText = "Item ID";
-            this.itemidclm.Name = "itemidclm";
+            this.InvPrice.DataPropertyName = "InvPrice";
+            this.InvPrice.Frozen = true;
+            this.InvPrice.HeaderText = "Price EA";
+            this.InvPrice.Name = "InvPrice";
+            this.InvPrice.ReadOnly = true;
+            // 
+            // InvID
+            // 
+            this.InvID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.InvID.DataPropertyName = "InvID";
+            this.InvID.Frozen = true;
+            this.InvID.HeaderText = "Item ID";
+            this.InvID.Name = "InvID";
+            this.InvID.ReadOnly = true;
+            this.InvID.Width = 131;
             // 
             // UC_Inventory
             // 
@@ -213,16 +223,16 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "UC_Inventory";
             this.Size = new System.Drawing.Size(778, 477);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.UC_Inventory_Load_1);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Button addbtn;
@@ -236,9 +246,10 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameclm;
-        private System.Windows.Forms.DataGridViewTextBoxColumn quantityclm;
-        private System.Windows.Forms.DataGridViewTextBoxColumn priceclm;
-        private System.Windows.Forms.DataGridViewTextBoxColumn itemidclm;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn InvName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn InvQuantity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn InvPrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn InvID;
     }
 }

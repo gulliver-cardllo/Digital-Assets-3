@@ -24,6 +24,7 @@ namespace OOOOORAHHAH
                 {
                     try
                     {
+
                         string name = parts[0];
                         int quantity = int.Parse(parts[1]);
                         double price = double.Parse(parts[2]);

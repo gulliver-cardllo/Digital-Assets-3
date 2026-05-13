@@ -11,6 +11,7 @@ using System.Windows.Forms;
 
 namespace OOOOORAHHAH
 {
+
     public partial class UC_Inventory : UserControl
     {
  
@@ -24,24 +25,9 @@ namespace OOOOORAHHAH
         private BindingList<Product> _inventoryList = new BindingList<Product>();
         private BindingSource _bindingSource = new BindingSource();
 
-        public string csvpath = "H:/Programming/OOOOORAHHAH/OOOOORAHHAH/test - Sheet1.csv";
+        public string csvpath = "./products.csv";
 
-        private void UC_Inventory_Load(object sender, EventArgs e)
-        {
-            string path = csvpath;
-
-            
-            var tempData = ItemService.LoadFromCSV(path);
-
-            
-            _inventoryList.Clear();
-            foreach (var item in tempData)
-            {
-                _inventoryList.Add(item);
-            }
-
-            dataGridView1.DataSource = _inventoryList;
-        }
+ 
 
 
 
@@ -58,6 +44,28 @@ namespace OOOOORAHHAH
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void updatebtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void UC_Inventory_Load_1(object sender, EventArgs e)
+        {
+            string path = csvpath;
+
+
+            var tempData = ItemService.LoadFromCSV(path);
+
+
+            _inventoryList.Clear();
+            foreach (var item in tempData)
+            {
+                _inventoryList.Add(item);
+            }
+            dataGridView1.AutoGenerateColumns = false;
+            dataGridView1.DataSource = _inventoryList;
         }
     }
 
