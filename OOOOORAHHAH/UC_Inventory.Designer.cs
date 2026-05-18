@@ -36,10 +36,10 @@
             this.pricelbl = new System.Windows.Forms.Label();
             this.quantitylbl = new System.Windows.Forms.Label();
             this.namelbl = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.boxID = new System.Windows.Forms.TextBox();
+            this.boxPrice = new System.Windows.Forms.TextBox();
+            this.boxQuantity = new System.Windows.Forms.TextBox();
+            this.boxName = new System.Windows.Forms.TextBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.InvName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,10 +60,10 @@
             this.groupBox1.Controls.Add(this.pricelbl);
             this.groupBox1.Controls.Add(this.quantitylbl);
             this.groupBox1.Controls.Add(this.namelbl);
-            this.groupBox1.Controls.Add(this.textBox4);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.boxID);
+            this.groupBox1.Controls.Add(this.boxPrice);
+            this.groupBox1.Controls.Add(this.boxQuantity);
+            this.groupBox1.Controls.Add(this.boxName);
             this.groupBox1.Location = new System.Drawing.Point(27, 104);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(200, 262);
@@ -136,91 +136,77 @@
             this.namelbl.TabIndex = 4;
             this.namelbl.Text = "Name";
             // 
-            // textBox4
+            // boxID
             // 
-            this.textBox4.Location = new System.Drawing.Point(82, 156);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 3;
+            this.boxID.Location = new System.Drawing.Point(82, 156);
+            this.boxID.Name = "boxID";
+            this.boxID.Size = new System.Drawing.Size(100, 20);
+            this.boxID.TabIndex = 3;
             // 
-            // textBox3
+            // boxPrice
             // 
-            this.textBox3.Location = new System.Drawing.Point(82, 117);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 2;
+            this.boxPrice.Location = new System.Drawing.Point(82, 117);
+            this.boxPrice.Name = "boxPrice";
+            this.boxPrice.Size = new System.Drawing.Size(100, 20);
+            this.boxPrice.TabIndex = 2;
             // 
-            // textBox2
+            // boxQuantity
             // 
-            this.textBox2.Location = new System.Drawing.Point(82, 80);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 1;
+            this.boxQuantity.Location = new System.Drawing.Point(82, 80);
+            this.boxQuantity.Name = "boxQuantity";
+            this.boxQuantity.Size = new System.Drawing.Size(100, 20);
+            this.boxQuantity.TabIndex = 1;
             // 
-            // textBox1
+            // boxName
             // 
-            this.textBox1.Location = new System.Drawing.Point(82, 41);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 0;
+            this.boxName.Location = new System.Drawing.Point(82, 41);
+            this.boxName.Name = "boxName";
+            this.boxName.Size = new System.Drawing.Size(100, 20);
+            this.boxName.TabIndex = 0;
             // 
             // dataGridView1
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.InvName,
             this.InvQuantity,
             this.InvPrice,
             this.InvID});
-            this.dataGridView1.Location = new System.Drawing.Point(245, 24);
+            this.dataGridView1.Location = new System.Drawing.Point(273, 52);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(474, 370);
-            this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.Size = new System.Drawing.Size(443, 358);
+            this.dataGridView1.TabIndex = 2;
             // 
             // InvName
             // 
             this.InvName.DataPropertyName = "InvName";
-            this.InvName.Frozen = true;
-            this.InvName.HeaderText = "Name";
+            this.InvName.HeaderText = "Item Name";
             this.InvName.Name = "InvName";
-            this.InvName.ReadOnly = true;
             // 
             // InvQuantity
             // 
-            this.InvQuantity.DataPropertyName = "InvQuantity ";
-            this.InvQuantity.Frozen = true;
+            this.InvQuantity.DataPropertyName = "InvQuantity";
             this.InvQuantity.HeaderText = "Quantity";
             this.InvQuantity.Name = "InvQuantity";
-            this.InvQuantity.ReadOnly = true;
             // 
             // InvPrice
             // 
             this.InvPrice.DataPropertyName = "InvPrice";
-            this.InvPrice.Frozen = true;
-            this.InvPrice.HeaderText = "Price EA";
+            this.InvPrice.HeaderText = "Item Price";
             this.InvPrice.Name = "InvPrice";
-            this.InvPrice.ReadOnly = true;
             // 
             // InvID
             // 
-            this.InvID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.InvID.DataPropertyName = "InvID";
-            this.InvID.Frozen = true;
             this.InvID.HeaderText = "Item ID";
             this.InvID.Name = "InvID";
-            this.InvID.ReadOnly = true;
-            this.InvID.Width = 131;
             // 
             // UC_Inventory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.groupBox1);
             this.Name = "UC_Inventory";
             this.Size = new System.Drawing.Size(778, 477);
             this.Load += new System.EventHandler(this.UC_Inventory_Load_1);
@@ -242,10 +228,10 @@
         private System.Windows.Forms.Label pricelbl;
         private System.Windows.Forms.Label quantitylbl;
         private System.Windows.Forms.Label namelbl;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox boxID;
+        private System.Windows.Forms.TextBox boxPrice;
+        private System.Windows.Forms.TextBox boxQuantity;
+        private System.Windows.Forms.TextBox boxName;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn InvName;
         private System.Windows.Forms.DataGridViewTextBoxColumn InvQuantity;
