@@ -44,7 +44,7 @@ namespace OOOOORAHHAH
         {
             using (StreamWriter writer = new StreamWriter(csvpath))
             {
-                writer.WriteLine("ItemName, ItemQuantity, ItemPrice, Item ID");
+                writer.WriteLine("Name,Quantity,price,ID");
 
                 foreach (var p in products)
                 {
